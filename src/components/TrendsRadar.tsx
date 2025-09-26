@@ -230,7 +230,7 @@ export function TrendsRadar() {
       {/* Instructions */}
       {!selectedCategory && (
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 p-6">
-          <h3 className="text-lg font-semibold text-blue-900 mb-3">🎯 Radar de Tendências - Dados Reais</h3>
+          <h3 className="text-lg font-semibold text-blue-900 mb-3">🎯 Radar imirante - Dados Reais</h3>
           <div className="space-y-2 text-blue-800">
             <p>• <strong>Google Trends:</strong> Dados atualizados automaticamente</p>
             <p>• <strong>Score ≥ 90:</strong> Apenas alta relevância</p>

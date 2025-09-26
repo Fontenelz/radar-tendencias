@@ -28,7 +28,7 @@ export default function App() {
 
       <footer className="bg-white border-t py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
-          <p>© 2024 Imirante.com - Radar de Tendências para Crescimento de Audiência</p>
+          <p>© 2024 Imirante.com - Radar imirante.com para Crescimento de Audiência</p>
         </div>
       </footer>
 
