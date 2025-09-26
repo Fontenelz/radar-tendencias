@@ -1,6 +1,6 @@
 import axios from "axios";
 const apiBase = axios.create({
-  baseURL: "https://google-trends-node-api.onrender.com"
+  baseURL: "https://trends.imirante.com.br/"
 })
 
 export default apiBase

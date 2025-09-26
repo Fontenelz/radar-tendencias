@@ -17,10 +17,11 @@ interface TrendSource {
   id: string;
   title: string;
   link: string;
-  data_volume: string;
+  variation: string;
   duration: string;
   detail: string;
   keywords?: string[]; // caso venha no objeto
+  search_volume: string
 }
 
 export interface Category {
@@ -73,24 +74,28 @@ export function TrendsRadar() {
   async function fetchRealTrends(selectedCategory?: Number) {
     try {
       setLoading(true);
-      const { data: dataFromApi } = await apiBase.get(
-        `trends?categoria=${selectedCategory}`
-      )
-      console.log(dataFromApi)
+      const { data: dataFromApi } = await apiBase.get(`trends`, {
+        params: {
+          geo: "BR",
+          category: selectedCategory,
+          // _t: Date.now(), // força ser sempre único
+        },
+      })
+      console.log(dataFromApi.trends)
 
       const trends: TrendItem[] = [];
 
       // Gera 10 tendências com scores altos (90-99)
-      dataFromApi.forEach((data: TrendSource) => {
+      dataFromApi.trends.forEach((data: TrendSource) => {
         const baseScore = Math.floor(Math.random() * 100); // exemplo
         const volume = Math.floor(Math.random() * 10000);  // exemplo
 
         trends.push({
           title: data.title,
-          description: `📈 Crescimento de ${data.data_volume.split("+arrow_upward")[1]} ${data.duration}. Tendência verificada através de análise de múltiplas fontes e dados de busca em tempo real.`,
+          description: `📈 Crescimento de ${data.variation} ${data.duration}. Tendência verificada através de análise de múltiplas fontes e dados de busca em tempo real.`,
           keywords: data.keywords ? data.keywords.slice(0, 4) : [],
           relevanceScore: baseScore,
-          searchVolume: data.data_volume.split("+arrow_upward")[0],
+          searchVolume: data.search_volume,
           source: `Google Trends API • ${new Date().toLocaleString()}`
         });
       });
