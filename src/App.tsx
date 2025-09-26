@@ -15,7 +15,7 @@ export default function App() {
               <span className="text-white font-bold text-sm">R</span>
             </div>
             <h1 className="text-xl font-bold text-gray-900">
-              Radar de Tendências <span className="text-blue-600">Imirante.com</span>
+              Radar <span className="text-blue-600"><a href="https://imirante.com" target="_blank">Imirante.com</a></span>
             </h1>
           </div>
           <SignOutButton />
@@ -25,13 +25,13 @@ export default function App() {
       <main className="flex-1">
         <Content />
       </main>
-      
+
       <footer className="bg-white border-t py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
           <p>© 2024 Imirante.com - Radar de Tendências para Crescimento de Audiência</p>
         </div>
       </footer>
-      
+
       <Toaster />
     </div>
   );
@@ -69,7 +69,7 @@ function Content() {
               <span className="text-white font-bold text-2xl">R</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Radar de Tendências
+              Radar
             </h2>
             <p className="text-lg text-gray-600 mb-6">
               Identifique os assuntos mais buscados e crie conteúdo viral para o Imirante.com
