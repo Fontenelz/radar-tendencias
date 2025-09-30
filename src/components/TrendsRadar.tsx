@@ -45,7 +45,7 @@ export function TrendsRadar() {
   //   selectedCategory ? { category: selectedCategory } : "skip"
   // );
   const categories = [
-    { id: 0, name: "Factuais", slug: "factuais", description: "Notícias e acontecimentos atuais", color: "bg-red-500", icon: "📰" },
+    { id: 0, name: "Geral", slug: "Geral", description: "Notícias e acontecimentos atuais", color: "bg-red-500", icon: "📰" },
     { id: 17, name: "Esporte", slug: "esporte", description: "Esportes e competições", color: "bg-green-500", icon: "⚽" },
     { id: 5, name: "Culinária", slug: "culinaria", description: "Gastronomia e receitas", color: "bg-orange-500", icon: "🍽️" },
     { id: 4, name: "Entretenimento", slug: "entretenimento", description: "Shows, eventos e diversão", color: "bg-purple-500", icon: "🎭" },
@@ -278,7 +278,7 @@ function TrendCard({ trend, onSave, isSaved }: TrendCardProps) {
 
   return (
     <div className="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
-      <div className="flex justify-between items-start mb-3">
+      {/* <div className="flex justify-between items-start mb-3">
         <div className={`px-2 py-1 rounded-full text-xs font-medium ${getScoreColor(trend.relevanceScore)}`}>
           Score: {trend.relevanceScore}
         </div>
@@ -292,7 +292,7 @@ function TrendCard({ trend, onSave, isSaved }: TrendCardProps) {
         >
           {isSaved ? '✓ Salva' : 'Salvar'}
         </button>
-      </div>
+      </div> */}
 
       <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2 normal-case">{trend.title}</h4>
       <p className="text-gray-600 text-sm mb-4 line-clamp-3">{trend.description}</p>
